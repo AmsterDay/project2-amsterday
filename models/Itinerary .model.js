@@ -38,6 +38,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("Experiences", userSchema);
+const User = model("Itinerary ", userSchema);
 
 module.exports = User;

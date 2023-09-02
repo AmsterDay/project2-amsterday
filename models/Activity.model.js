@@ -27,7 +27,6 @@ const userSchema = new Schema(
             type: String,
         },
 
-
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
@@ -35,6 +34,6 @@ const userSchema = new Schema(
     }
 );
 
-const User = model("Activities", userSchema);
+const User = model("Activity", userSchema);
 
 module.exports = User;
