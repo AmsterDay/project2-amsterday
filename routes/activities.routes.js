@@ -35,17 +35,17 @@ router.post("/activities/create", (req, res, next) => {
 });
 
 //UPDATE activity
-router.get("/activities/:id/edit", (req, res, next) => {
+router.get("/activities/:activityId/edit", (req, res, next) => {
     const { activityId } = req.params;
 
     Activity.findById(activityId)
-        .then(Activity => {
+        .then(activityToEdit => {
             res.render("activities/update-form", { activity: activityToEdit })
         })
         .catch(e => next(e));
 });
 
-router.post("/activities/:id/edit", (req, res, next) => {
+router.post("/activities/:activityId/edit", (req, res, next) => {
     const { activityId } = req.params;
     const { title, category, description, price, review, tips } = req.body;
 
@@ -55,12 +55,12 @@ router.post("/activities/:id/edit", (req, res, next) => {
 });
 
 //DELETE activity
-router.post("/activities/:id/delete", (req, res, next) => {
-    const {activityId} = req.params;
+router.post("/activities/:activityId/delete", (req, res, next) => {
+    const { activityId } = req.params;
 
     Activity.findByIdAndDelete(activityId)
-    .then(() => res.redirect("/activities"))
-    .catch(e => next(e));
+        .then(() => res.redirect("/activities"))
+        .catch(e => next(e));
 });
 
 module.exports = router;
