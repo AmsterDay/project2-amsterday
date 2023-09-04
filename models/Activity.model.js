@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const activitySchema = new Schema(
     {
         title: {
             type: String,
@@ -9,19 +9,19 @@ const userSchema = new Schema(
         },
         category: {
             type: String,
-            enum: ["museam", "experiece", "food"],
+            enum: ["museum", "experiece", "food"],
             required: true,
         },
         description: {
             type: String,
             required: true,
-        },
-        duration: {
-            type: Number,
-        },
-        investment: {
+        },       
+        price: {
             type: Number,
             required: true,
+        },
+        review: {
+            type: Number,
         },
         tips: {
             type: String,
@@ -34,6 +34,6 @@ const userSchema = new Schema(
     }
 );
 
-const User = model("Activity", userSchema);
+const User = model("Activity", activitySchema);
 
 module.exports = User;
