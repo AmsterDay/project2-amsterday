@@ -1,1 +1,43 @@
-<h1>hello</h1>
+<h1>Create a Activity</h1>
+
+
+
+
+<form method="POST" action="/activities/create">
+    <label> Title:
+        <input type="text" name="title" />
+    </label>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="museum">Museum</option>
+        <option value="experience">Experience</option>
+        <option value="food">Food</option>
+    </select>
+    </label>
+
+    <label> Description:
+        <textarea type="text" name="description"></textarea>
+    </label>
+
+    <label> Price:
+        <input type="number" name="price" />
+    </label>
+
+
+    <label> Review:
+        <input type="number" name="review" />
+    </label>
+
+
+    <label> tips:
+        <input type="text" name="tips" />
+    </label>
+
+
+
+
+
+
+    <button type="submit"> Create </button>
+</form>

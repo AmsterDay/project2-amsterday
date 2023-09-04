@@ -87,7 +87,7 @@ mongoose
     .then((x) => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
 
-        return Activity.deleteMany({}); //WARNING: this will delete all activities in your DB !!
+      return Activity.deleteMany({}); //WARNING: this will delete all activities in your DB !!
     })
     .then((response) => {
         console.log(response);
