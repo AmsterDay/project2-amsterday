@@ -1,1 +1,16 @@
-<h1>Hello</h1>
+<h2>List of Activities</h2>
+{{#each activities}}
+    <section class="activity-summary"></section>
+        <p>
+            title: {{this.title}} <br />
+            category: {{this.category}} <br />
+            description:{{this.description}} <br />
+        </p>  
+
+       
+
+
+
+<hr />
+    
+{{/each}}
