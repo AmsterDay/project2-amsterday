@@ -34,6 +34,4 @@ const activitySchema = new Schema(
     }
 );
 
-const User = model("Activity", activitySchema);
-
-module.exports = User;
+module.exports = model("Activity", activitySchema);
