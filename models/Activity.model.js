@@ -9,7 +9,7 @@ const activitySchema = new Schema(
         },
         category: {
             type: String,
-            enum: ["museum", "experiece", "food"],
+            enum: ["museum", "experience", "food"],
             required: true,
         },
         description: {
