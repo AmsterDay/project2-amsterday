@@ -9,7 +9,7 @@ const activitySchema = new Schema(
         },
         category: {
             type: String,
-            enum: ["museum", "experiece", "food"],
+            enum: ["museum", "experience", "food"],
             required: true,
         },
         description: {
@@ -34,6 +34,4 @@ const activitySchema = new Schema(
     }
 );
 
-const User = model("Activity", activitySchema);
-
-module.exports = User;
+module.exports = model("Activity", activitySchema);
