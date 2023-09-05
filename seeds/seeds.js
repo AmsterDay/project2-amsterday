@@ -14,7 +14,8 @@ const activities = [
         price: 23,
         review: 4.6,
         tips:"The Rijksmuseum is usually the busiest between 11 am and 3 pm. The best strategy to enjoy the museum is thus to avoid the middle of the day by arriving early (the Rijksmuseum opens at 9 am) or late afternoon (after around 3 pm, last admission at 4:30 pm).",
-    },
+        imageUrl: "https://cdn-imgix.headout.com/media/images/556016bc7899f92e74398785ff633327-Rijksmuseum%20Opening%20Hours.jpg?auto=format&w=814.9333333333333&h=458.4&q=90&fit=crop&ar=16%3A9",
+      },
       {
         title: "Van Gogh Museum",
         category:"museum",
@@ -22,6 +23,7 @@ const activities = [
         price: 22,
         review: 4.6,
         tips:"there are two seperate lines for the museum: a ticket line and the line to get in. Sometimes the line to buy tickets can be really long so I encourage you to buy your tickets ONLINE.",
+        imageUrl:"https://www.passport2amsterdam.com/wp-content/uploads/2020/05/van-gogh-museum.jpg"
       },  
       {
         title:"Anne Frank House",
@@ -30,6 +32,7 @@ const activities = [
         price: 18,
         review: 4.6,
         tips:"Tickets to the Anne Frank House are notoriously difficult to grab, so you'll want to plan ahead in order to make sure you can get a ticket for entry.",
+        imageUrl:"https://img.trouw.nl/4ffd4578086b6b8cfabbb1f956d5cabe6efc0594/complottheorie-tekst-geprojecteerd-op-anne-frank-huis-halsema-onversneden-antisemitisme",   
       },
       {
         title:"Heineken Experience",
@@ -38,6 +41,7 @@ const activities = [
         price: 21,
         review: 4.2,
         tips:"The Heineken Experience has designed a digital app that provides extra information and fun facts as you explore the brewery. Unlock the app when you enter the Heineken Experience to get the most out of your visit.",
+        imageUrl:" https://www.mr-amsterdam.com/media/images/attractions-sights/heineken-experience/heineken-experience-amsterdam.jpg",
       },
       {
         title:"Canal Boat Tour",
@@ -46,6 +50,7 @@ const activities = [
         price: 20,
         review: 4.9,
         tips:"For a more relaxed experience, we recommend taking a canal cruise on a weekday, early in the morning (9-10.30 AM) or late in the afternoon (after 4-5 PM).",
+        imageUrl:"https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/5c/17.jpg",
       },  
       {
         title:"Bloemenpark Keukenhof",
@@ -54,6 +59,7 @@ const activities = [
         price: 20,
         review: 4.7,
         tips:"If Keukenhof is on your bucket list (and it definitely should be!), then you'll want to visit the park between mid-March and mid-May. In 2023, the Keukenhof will be open from March 23 to May 14. This is the only time of year that the park is open as this is when the flowers are in bloom.",
+        imageUrl:"https://cdn.holidayguru.nl/wp-content/uploads/2020/02/Blooming-colorful-tulips-flowerbed-in-public-flower-garden-with-windmill.-Popular-tourist-site.-Lisse-Holland-Netherlands-shutterstock_1111810853.jpg",
       },
       {
         title:"Van Stapele Koekmakerij",
@@ -62,6 +68,7 @@ const activities = [
         price: 2.50,
         review: 4.8,
         tips:"I recommend avoiding coming here in the weekend afternoons as there's always a small line (5-10 minutes). I typically come here in the early afternoon (prior to lunch) or near their closing time to avoid waiting on line!",
+        imageUrl:"https://www.crossmarks.nl/wp-content/uploads/2019/11/VANSTAPELE_1.jpg",
       },
       {
         title:"Van Wonderen Stroopwafels",
@@ -70,6 +77,7 @@ const activities = [
         price: 10,
         review: 3.7,
         tips:"The traditional way to eat the stroopwafel is to place it on top of a cup of hot coffee, tea or chocolate. This heats the waffle and slightly softens the syrup making the waffle soft on one side and slightly crispy on the other.",
+        imageUrl:"https://i0.wp.com/mytravelboektje.com/wp-content/uploads/2017/08/19944661_287951278275138_6036659784398513129_o-600x399.jpg?resize=600%2C399",
       },
       {
         title:"Apple Pie at Cafe Winkel 43",
@@ -78,7 +86,7 @@ const activities = [
         price: 4,
         review: 4.6,
         tips:"In the winter you can sit inside, but in the summer they have a very nice terrace where you can sit in the sun! You can immediately enjoy watching people coming to and from the market. Hoping you can find a spot. It's always super busy.",
-        image: "https://example.com/image.jpg", 
+        imageUrl:"https://www.helloamsterdam.nl/app/uploads/2020/09/Winkel-43-2-2.jpg",
       },
 ];
 

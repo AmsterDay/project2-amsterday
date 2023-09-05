@@ -28,17 +28,14 @@ const activitySchema = new Schema(
         tips: {
             type: String,
         },
-        image: {
-            type: String,
-        },
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        },
-       
-    
-        
-       
+        imageUrl: {
+            type: String, 
+          },
+
+    },
+    {
+        // this second object adds extra properties: `createdAt` and `updatedAt`
+        timestamps: true,
     }
 );
 
