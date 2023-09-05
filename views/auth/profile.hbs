@@ -1,0 +1,22 @@
+{{#if currentUser}}
+<section>
+    <h1>Welcome {{currentUser.username}}</h1>
+
+    <div>
+        <a href="/activities/create">Create new activity</a>
+        <a href="/activities/my-activities">See your activities</a>
+    </div>
+
+    
+
+    <div id="logout">
+        <form id="logout-form" action="/auth/logout">
+            <button>Logout</button>
+        </form>
+
+    </div>
+</section>
+
+{{else}}
+<h1>Log in to access</h1>
+{{/if}}
