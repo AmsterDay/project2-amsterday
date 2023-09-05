@@ -78,6 +78,7 @@ const activities = [
         price: 4,
         review: 4.6,
         tips:"In the winter you can sit inside, but in the summer they have a very nice terrace where you can sit in the sun! You can immediately enjoy watching people coming to and from the market. Hoping you can find a spot. It's always super busy.",
+        image: "https://example.com/image.jpg", 
       },
 ];
 
