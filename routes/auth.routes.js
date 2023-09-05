@@ -10,18 +10,19 @@ const saltRounds = 10;
 
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
+const Activity = require("../models/Activity.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 // GET /auth/signup
-router.get("/signup", isLoggedOut, (req, res) => {
+router.get("/signup",  (req, res) => {
   res.render("auth/signup");
 });
 
 // POST /auth/signup
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post("/signup",  (req, res) => {
   const { username, email, password } = req.body;
 
   // Check that username, email, and password are provided
@@ -145,7 +146,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      res.status(500).render("auth/logout", { errorMessage: err.message });
+      res.status(500).render("/auth/logout", { errorMessage: err.message });
       return;
     }
 
@@ -154,11 +155,13 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 // GET /Profile page
-router.get("/profile", (req, res) => {
+router.get("/profile", isLoggedIn, (req, res) => {
   const data = {
-    userDetails: req.session.userDetails
-  }
-  req.render("auth/profile", data)
+    currentUser: req.session.currentUser
+  } 
+  res.render("auth/profile", data)  
 })
+
+
 
 module.exports = router;

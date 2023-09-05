@@ -2,16 +2,8 @@
 {{#each activities}}
 <section class="activity-summary"></section>
 <p>
-    title: {{this.title}} <br />
-    </p>
-
-
-<form action="/activities/{{_id}}/delete" method="POST">
-    <button>Delete</button>
-</form>
-<form action="/activities/{{_id}}/edit">
-    <button>Update</button>
-</form>
+    title: {{title}} <br />
+</p>
 
 <form action="/activities/{{_id}}">
     <button>Details</button>

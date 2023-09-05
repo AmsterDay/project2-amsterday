@@ -1,0 +1,27 @@
+<h1>My Activities</h1>
+
+{{#if currentUser}}
+<ul>
+    {{#each activities}}
+    <li>
+        <h2>{{title}}</h2>
+        <p><strong>Category:</strong> {{category}}</p>
+        <p><strong>Description:</strong> {{description}}</p>
+        <p><strong>Price:</strong> ${{price}}</p>
+        <p><strong>Review:</strong> {{review}}</p>
+        <p><strong>Tips:</strong> {{tips}}</p>
+    </li>
+
+    <form action="/activities/{{_id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+    <form action="/activities/{{_id}}/edit">
+        <button>Update</button>
+    </form>
+    {{/each}}
+</ul>
+{{else}}
+<p>No activities found.</p>
+{{/if}}
+
+<a href="/activities/create">Create New Activity</a>
