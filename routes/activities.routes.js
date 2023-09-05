@@ -66,7 +66,7 @@ router.post("/activities/:activityId/delete", (req, res, next) => {
 
 
 
-router.get("/activities/:activityId/details", (req, res, next) => {
+router.get("/activities/:activityId", (req, res, next) => {
     const id = req.params.activityId;
     Activity.findById(id)
 
