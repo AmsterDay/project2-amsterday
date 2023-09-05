@@ -80,7 +80,7 @@ const activities = [
         imageUrl:"https://i0.wp.com/mytravelboektje.com/wp-content/uploads/2017/08/19944661_287951278275138_6036659784398513129_o-600x399.jpg?resize=600%2C399",
       },
       {
-        title:"Apple Pie at Cafe Winkel 43",
+        title:"Cafe Winkel 43",
         category:"food",
         description:"For the people living in Amsterdam, this apple pie from Cafe Winkel 43 is hardly a secret, everyone knows this famouse home-made pie.",
         price: 4,
