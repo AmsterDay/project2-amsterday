@@ -156,7 +156,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
 // GET /Profile page
 router.get("/profile", (req, res) => {
   const data = {
-    userDetails:req.session.userDetails
+    userDetails: req.session.userDetails
   }
   req.render("auth/profile", data)
 })

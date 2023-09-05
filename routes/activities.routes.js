@@ -63,4 +63,21 @@ router.post("/activities/:activityId/delete", (req, res, next) => {
         .catch(e => next(e));
 });
 
+
+
+
+router.get("/activities/:activityId/details", (req, res, next) => {
+    const id = req.params.activityId;
+    Activity.findById(id)
+
+        .then(activityFromDB => {
+            res.render("activities/details", activityFromDB);
+        })
+        .catch(e => next(e))
+});
+
+
+
+
+
 module.exports = router;

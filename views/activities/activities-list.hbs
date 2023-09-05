@@ -1,18 +1,24 @@
 <h2>List of Activities</h2>
 {{#each activities}}
-    <section class="activity-summary"></section>
-        <p>
-            title: {{this.title}} <br />
-            category: {{this.category}} <br />
-            description:{{this.description}} <br />
-        </p>  
+<section class="activity-summary"></section>
+<p>
+    title: {{this.title}} <br />
+   
+</p>
 
-       
 
-  <form action="/activities/{{_id}}/delete" method="POST">
-        <button>Delete</button>
-    </form>
 
+<form action="/activities/{{_id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
+<form action="/activities/{{_id}}/edit">
+    <button>Update</button>
+</form>
+
+
+<form action="/activities/{{_id}}/details" method="POST">
+    <button>Details</button>
+</form>
 <hr />
-    
+
 {{/each}}
