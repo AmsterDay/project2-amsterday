@@ -14,8 +14,8 @@ router.get("/", (req, res, next) => {
         .catch(e => next(e))
 });
 
-//CREATE: display form (add isloggedIn middleware later)
-router.get("/create", (req, res, next) => {
+//CREATE: display form 
+router.get("/create", isLoggedIn, (req, res, next) => {
     res.render("activities/create-form")
 });
 
@@ -29,8 +29,7 @@ router.post("/create", (req, res, next) => {
         tips: req.body.tips,
         user: req.session.currentUser._id,
     };
-    console.log(req.session.currentUser)
-
+   
     Activity.create(newActivity)
         .then((newActivity) => {
             res.redirect("/activities/my-activities");
@@ -47,6 +46,7 @@ router.get("/my-activities", isLoggedIn, (req, res, next) => {
         })
         .catch(e => next(e));
   });
+
 
 //UPDATE activity
 router.get("/:activityId/edit", (req, res, next) => {
@@ -80,13 +80,13 @@ router.post("/:activityId/delete", (req, res, next) => {
 // READ: display details of one activity
 router.get("/:activityId", (req, res, next) => {
        Activity.findById(req.params.activityId)
+       
 
         .then(activityFromDB => {
             res.render("activities/details", activityFromDB);
         })
         .catch(e => next(e))
 });
-
 
 
 
