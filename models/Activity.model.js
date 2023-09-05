@@ -26,6 +26,9 @@ const activitySchema = new Schema(
         tips: {
             type: String,
         },
+        image: {
+            type: String, 
+          },
 
     },
     {
