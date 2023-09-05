@@ -29,7 +29,7 @@ router.post("/create", (req, res, next) => {
         tips: req.body.tips,
         user: req.session.currentUser._id,
     };
-   
+
     Activity.create(newActivity)
         .then((newActivity) => {
             res.redirect("/activities/my-activities");
@@ -39,13 +39,13 @@ router.post("/create", (req, res, next) => {
 
 // Display activities created by the logged-in user
 router.get("/my-activities", isLoggedIn, (req, res, next) => {
-    Activity.find({ user: req.session.currentUser._id }) 
+    Activity.find({ user: req.session.currentUser._id })
         .then((userActivities) => {
-            
+
             res.render("activities/my-activities", { activities: userActivities, currentUser: req.session.currentUser });
         })
         .catch(e => next(e));
-  });
+});
 
 
 //UPDATE activity
@@ -79,8 +79,8 @@ router.post("/:activityId/delete", (req, res, next) => {
 
 // READ: display details of one activity
 router.get("/:activityId", (req, res, next) => {
-       Activity.findById(req.params.activityId)
-       
+    Activity.findById(req.params.activityId)
+
 
         .then(activityFromDB => {
             res.render("activities/details", activityFromDB);

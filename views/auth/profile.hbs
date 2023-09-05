@@ -1,22 +1,20 @@
-{{#if currentUser}}
-<section>
-    <h1>Welcome {{currentUser.username}}</h1>
+<div class="container mt-5">
+  {{#if currentUser}}
+  <section>
+    <h1 class="display-4 font-weight-bold">Welcome <span class="text-info">{{currentUser.username}}</span></h1>
 
-    <div>
-        <a href="/activities/create">Create new activity</a>
-        <a href="/activities/my-activities">See your activities</a>
+    <div class="btn-group mt-4">
+      <a href="/activities/create" class="btn btn-primary btn-lg">Create new activity</a>
+      <a href="/activities/my-activities" class="btn btn-success btn-lg">See your activities</a>
     </div>
 
-    
-
-    <div id="logout">
-        <form id="logout-form" action="/auth/logout">
-            <button>Logout</button>
-        </form>
-
+    <div id="logout" class="mt-4">
+      <form id="logout-form" action="/auth/logout">
+        <button class="btn btn-danger btn-lg">Logout</button>
+      </form>
     </div>
-</section>
-
-{{else}}
-<h1>Log in to access</h1>
-{{/if}}
+  </section>
+  {{else}}
+  <h1 class="display-4 font-weight-bold">Log in to access</h1>
+  {{/if}}
+</div>

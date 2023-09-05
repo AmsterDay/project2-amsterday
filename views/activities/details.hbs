@@ -1,19 +1,18 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">{{this.title}}</h1>
+            <img src="{{this.imageUrl}}" alt="" class="img-fluid rounded mt-3">
 
+            <h3>Description:</h3>
+            <p>{{this.description}}</p>
 
+            <h4>Price: €{{this.price}} | Review: <span class="text-info"
+                    style="font-size: 200%;">&starf;</span>{{this.review}} </h4>
+            <h3>Tips:</h3>
+            <p>{{this.tips}}</p>
 
-<h1>
-    
-    {{this.title}}
-    
-    
-    </h1>
-
-   <img src="{{this.imageUrl}}" alt="">
-    <h3>category:</h3> 
-    <p>{{this.category}}</p> 
-
-    <h3>description:</h3> 
-    <p>{{this.description}}</p>
-
-   
-<a href="/activities">Back</a>
+            <a href="/activities" class="btn btn-primary mt-3">Back</a>
+        </div>
+    </div>
+</div>

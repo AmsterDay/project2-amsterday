@@ -1,33 +1,45 @@
-<h2>Edit the activity: {{activity.title}}</h2>
+<div class="container text-center">
+  <h2>Edit the activity: {{activity.title}}</h2>
+  <form method="POST" action="/activities/{{activity._id}}/edit">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{activity.title}}" />
+    </div>
 
-<form method="POST" action="/activities/{{activity._id}}/edit">
-    <label> Title:
-        <input type="text" name="title" value="{{activity.title}}" />
-    </label>
-
-     <label for="category">Category:</label>
-    <select id="category" name="category" required>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select class="form-control" id="category" name="category" required>
         <option value="museum">Museum</option>
         <option value="experience">Experience</option>
         <option value="food">Food</option>
-    </select>
-    </label>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" cols="30" rows="4">{{activity.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" class="form-control" id="price" name="price" min="1" max="1000"step="0.1" value="{{activity.price}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="review">Review:</label>
+      <input type="number" class="form-control" id="review" name="review" min="1" max="5" step="0.1" value="{{activity.review}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="tips">Tips:</label>
+      <input type="text" class="form-control" id="tips" name="tips" value="{{activity.tips}}" />
+    </div>
     
-    <label> Description:
-        <textarea name="description" cols="30" rows="4">{{activity.description}}</textarea>
-    </label>
-
-    <label> price:
-        <input type="number" name="price" min="1" max="1000" value="{{activity.price}}" />
-    </label>
-
-      <label> review:
-        <input type="number" name="review" min="1" max="5" value="{{activity.review}}" />
-    </label>
-
-      <label> tips:
-        <input type="text" name="tips"  value="{{activity.tips}}" />
-    </label>
-
-    <button>Save changes</button>
-</form>
+    <div class="form-group">
+      <label for="image">Upload Image:</label>
+      <input type="file" class="form-control-file" id="image" name="image" accept="image/*" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save changes</button>
+  </form>
+</div>

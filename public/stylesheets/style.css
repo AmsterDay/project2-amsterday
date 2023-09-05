@@ -1,6 +1,7 @@
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#74C5AF ;
 }
 
 a {
@@ -9,4 +10,8 @@ a {
 
 h1 {
   color: 15px;
+}
+
+#actlist{
+  display: flex;
 }
