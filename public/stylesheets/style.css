@@ -15,3 +15,6 @@ h1 {
 #actlist{
   display: flex;
 }
+.custom-toggler i {
+  color:#74C5AF; 
+}
