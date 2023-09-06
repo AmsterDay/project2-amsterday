@@ -78,14 +78,15 @@ router.post("/:activityId/delete", (req, res, next) => {
 });
 
 // READ: display details of one activity
-router.get("/:activityId", (req, res, next) => {
-    Activity.findById(req.params.activityId)
+router.get("/:activityTitle", (req, res, next) => {
+    const title = req.params.activityTitle;
 
-
+    Activity.findOne({ title })
         .then(activityFromDB => {
+
             res.render("activities/details", activityFromDB);
         })
-        .catch(e => next(e))
+        .catch(e => next(e));
 });
 
 
