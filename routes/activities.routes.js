@@ -3,6 +3,7 @@ const Activity = require("../models/Activity.model")
 const User = require("../models/User.model")
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
+const fileUploader = require('../config/cloudinary.config');
 
 
 // READ: Display Activities page 
@@ -19,7 +20,9 @@ router.get("/create", isLoggedIn, (req, res, next) => {
     res.render("activities/create-form")
 });
 
-router.post("/create", (req, res, next) => {
+router.post("/create", fileUploader.single('image'), (req, res, next) => {
+    console.log(req.file);
+
     const newActivity = {
         title: req.body.title,
         category: req.body.category,
@@ -28,6 +31,7 @@ router.post("/create", (req, res, next) => {
         review: req.body.review,
         tips: req.body.tips,
         user: req.session.currentUser._id,
+        imageUrl: req.file.path,
     };
 
     Activity.create(newActivity)
@@ -59,14 +63,21 @@ router.get("/:activityId/edit", (req, res, next) => {
         .catch(e => next(e));
 });
 
-router.post("/:activityId/edit", (req, res, next) => {
+router.post("/:activityId/edit", fileUploader.single('image'), (req, res, next) => {
     const { activityId } = req.params;
-    const { title, category, description, price, review, tips } = req.body;
-
-    Activity.findByIdAndUpdate(activityId, { title, category, description, price, review, tips })
-        .then(() => { res.redirect("/activities") })
-        .catch(e => next(e));
-});
+    const { title, category, description, price, review, tips, existingImage } = req.body;
+  
+    let imageUrl;
+    if (req.file) {
+      imageUrl = req.file.path;
+    } else {
+      imageUrl = existingImage;
+    }
+  
+    Activity.findByIdAndUpdate(activityId, { title, category, description, price, review, tips, imageUrl }, { new: true })
+      .then(() => res.redirect("/activities/my-activities"))
+      .catch(e => next(e));
+  });
 
 //DELETE activity
 router.post("/:activityId/delete", (req, res, next) => {

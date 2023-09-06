@@ -12,6 +12,8 @@
           <p><strong>Price:</strong> €{{price}}</p>
           <p><strong>Review:</strong> {{review}}</p>
           <p><strong>Tips:</strong> {{tips}}</p>
+          <img src="{{imageUrl}}" alt="{{title}}">
+
           <div class="btn-group" role="group" aria-label="Actions">
             <form action="/activities/{{_id}}/delete" method="POST">
               <button type="submit" class="btn btn-danger">Delete</button>
