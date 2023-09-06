@@ -65,7 +65,7 @@ router.post("/signup",  (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("auth/login");
+      res.redirect("/auth/login");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -135,7 +135,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          res.redirect("/auth/profile");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
