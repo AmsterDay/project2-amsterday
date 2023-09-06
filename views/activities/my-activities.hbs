@@ -12,15 +12,18 @@
           <p><strong>Price:</strong> €{{price}}</p>
           <p><strong>Review:</strong> {{review}}</p>
           <p><strong>Tips:</strong> {{tips}}</p>
-          <img src="{{imageUrl}}" alt="{{title}}">
-
-          <div class="btn-group" role="group" aria-label="Actions">
-            <form action="/activities/{{_id}}/delete" method="POST">
-              <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-            <form action="/activities/{{_id}}/edit">
-              <button type="submit" class="btn btn-primary">Update</button>
-            </form>
+          <img src="{{imageUrl}}" alt="{{title}}" width="400" height="400">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="btn-group" role="group" aria-label="Actions">
+                <form action="/activities/{{_id}}/delete" method="POST">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <form action="/activities/{{_id}}/edit">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+              </div>
+            </div>
           </div>
         </li>
         {{/each}}
