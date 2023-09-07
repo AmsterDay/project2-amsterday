@@ -36,10 +36,13 @@
     }
   </style>
 
+
+
+
 </head>
 
 <body>
-
+  {{#if session.currentUser}}
   <nav class="navbar navbar-expand-lg ">
     <a class="navbar-brand" href="/"><img src="../images/amsday.jpg" alt="Logo"></a>
 
@@ -58,8 +61,48 @@
           <a class="nav-link" href="/activities">Activities</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/activities/create">Create activity</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/auth/profile">Profile</a>
         </li>
+
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  {{else}}
+  <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="/"><img src="../images/amsday.jpg" alt="Logo"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon custom-toggler">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/activities">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/activities/create">Create activity</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/profile">Profile</a>
+        </li>
+
 
       </ul>
 
@@ -74,6 +117,9 @@
       </ul>
     </div>
   </nav>
+  {{/if}}
+
+
 
   {{{body}}}
 
@@ -83,8 +129,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10 ">
-        <p>&copy; 2023 AmsterDay. All rights reserved. | <a href="https://github.com/AmsterDay/project2-amsterday" style="text-decoration: none;">Check out the code on GitHub</a> </p>
-        
+        <p>&copy; 2023 AmsterDay. All rights reserved. | <a href="https://github.com/AmsterDay/project2-amsterday"
+            style="text-decoration: none;">Check out the code on GitHub</a> </p>
+
       </div>
     </div>
   </div>
