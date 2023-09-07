@@ -11,9 +11,19 @@
                 <div id="actlist">
                     <img src="{{this.imageUrl}}" alt="" width="400" height="400">
                 </div>
-                <form action="/activities/{{title}}">
-                    <button class="btn btn-primary">Details</button>
-                </form>
+                <div class="text-center mt-3">
+                    <form action="/activities/like/{{_id}}" method="POST">
+                        <button class="btn btn-danger like-button">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </form>
+                    <span class="ml-2" id="{{title}}-likes">{{like.length}}</span>
+                </div>
+                <div class="text-center mt-2">
+                    <form action="/activities/{{title}}">
+                        <button class="btn btn-primary">Details</button>
+                    </form>
+                </div>
             </section>
             <hr />
         </div>

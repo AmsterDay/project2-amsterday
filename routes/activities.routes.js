@@ -66,18 +66,18 @@ router.get("/:activityId/edit", (req, res, next) => {
 router.post("/:activityId/edit", fileUploader.single('image'), (req, res, next) => {
     const { activityId } = req.params;
     const { title, category, description, price, review, tips, existingImage } = req.body;
-  
+
     let imageUrl;
     if (req.file) {
-      imageUrl = req.file.path;
+        imageUrl = req.file.path;
     } else {
-      imageUrl = existingImage;
+        imageUrl = existingImage;
     }
-  
+
     Activity.findByIdAndUpdate(activityId, { title, category, description, price, review, tips, imageUrl }, { new: true })
-      .then(() => res.redirect("/activities/my-activities"))
-      .catch(e => next(e));
-  });
+        .then(() => res.redirect("/activities/my-activities"))
+        .catch(e => next(e));
+});
 
 //DELETE activity
 router.post("/:activityId/delete", (req, res, next) => {
@@ -100,6 +100,27 @@ router.get("/:activityTitle", (req, res, next) => {
         .catch(e => next(e));
 });
 
+//Like functionality
+router.post("/like/:activityId", isLoggedIn, async (req, res, next) => {
+    const { activityId } = req.params
+    const userId = req.session.currentUser._id
 
+    try {
+        const activity = await Activity.findById(activityId)
+        if (activity.like.includes(userId)) {
+            await Activity.findByIdAndUpdate(activityId, { $pull: { like: userId } })
+            res.redirect('/activities')
+            return
+        }
+        await Activity.findByIdAndUpdate(activityId, { $push: { like: userId } })
+
+        res.redirect('/activities')
+
+    } catch (error) {
+        console.log(error)
+        next(error)
+
+    }
+})
 
 module.exports = router;

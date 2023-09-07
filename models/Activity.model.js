@@ -34,7 +34,10 @@ const activitySchema = new Schema(
         user: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-        }
+        },
+        like: [{
+            type: Schema.Types.ObjectId, ref: "User"
+        }]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
