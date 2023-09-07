@@ -15,9 +15,11 @@
                     <form action="/activities/like/{{_id}}" method="POST">
                         <button class="btn btn-danger like-button">
                             <i class="fas fa-heart"></i>
+                            <span class="ml-2" id="{{title}}-likes">{{like.length}}</span>
+                            
                         </button>
                     </form>
-                    <span class="ml-2" id="{{title}}-likes">{{like.length}}</span>
+                    
                 </div>
                 <div class="text-center mt-2">
                     <form action="/activities/{{title}}">
